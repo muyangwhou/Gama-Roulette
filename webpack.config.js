@@ -30,9 +30,6 @@ module.exports = {
       },
     ],
   },
-  server: {
-    port: 3001,
-  },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
@@ -42,7 +39,7 @@ module.exports = {
     static: {
       directory: path.join(__dirname, "public"),
     },
-    port: 3000,
+    port: 3001,
     hot: true,
   },
 };
