@@ -30,6 +30,9 @@ module.exports = {
       },
     ],
   },
+  server: {
+    port: 3001,
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
