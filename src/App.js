@@ -521,6 +521,17 @@ function App() {
               <div className="h-4 w-px bg-gray-200"></div>
 
               <a
+                href="https://flipcoin.gamacoin.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-[#22AD74] transition-all duration-300 flex items-center gap-2 font-medium hover:-translate-y-0.5"
+              >
+                Coin
+              </a>
+
+              <div className="h-4 w-px bg-gray-200"></div>
+
+              <a
                 href="https://gamacoin.ai/"
                 target="_blank"
                 rel="noopener noreferrer"
