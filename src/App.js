@@ -260,7 +260,6 @@ function App() {
         );
 
         const networkConfig = NETWORKS[networkKey];
-
         if (!networkConfig) {
           throw new Error(
             `Unsupported network. Connected to chain ID: ${currentChainId}. Supported chain IDs: ${SUPPORTED_CHAIN_IDS.join(
@@ -646,6 +645,7 @@ function App() {
             account={account}
             onError={handleError}
             addToast={addToast}
+            chainId={chainId}
           />
         </main>
 

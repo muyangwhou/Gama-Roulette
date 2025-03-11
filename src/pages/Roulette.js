@@ -972,7 +972,7 @@ const BetHelpers = {
   },
 };
 
-const RoulettePage = ({ contracts, account, onError, addToast }) => {
+const RoulettePage = ({ contracts, account, onError, addToast, chainId }) => {
   // State management
   const [selectedBets, setSelectedBets] = useState([]);
   const [selectedChipValue, setSelectedChipValue] = useState(
@@ -1008,6 +1008,7 @@ const RoulettePage = ({ contracts, account, onError, addToast }) => {
     queryKey: ["rouletteHistory", account],
     queryFn: async () => {
       if (!contracts?.roulette || !account) return null;
+
       try {
         const [bets] = await contracts.roulette.getUserBetHistory(
           account,
@@ -1049,8 +1050,12 @@ const RoulettePage = ({ contracts, account, onError, addToast }) => {
 
         return processedBets;
       } catch (error) {
+        if (chainId === 51) {
+          return [];
+        } else {
+          throw error;
+        }
         // Throw the error to be handled by React Query's error state
-        throw error;
       }
     },
     enabled: !!contracts?.roulette && !!account,
