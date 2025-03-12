@@ -972,7 +972,7 @@ const BetHelpers = {
   },
 };
 
-const RoulettePage = ({ contracts, account, onError, addToast, chainId }) => {
+const RoulettePage = ({ contracts, account, onError, addToast }) => {
   // State management
   const [selectedBets, setSelectedBets] = useState([]);
   const [selectedChipValue, setSelectedChipValue] = useState(
@@ -1050,11 +1050,8 @@ const RoulettePage = ({ contracts, account, onError, addToast, chainId }) => {
 
         return processedBets;
       } catch (error) {
-        if (chainId === 51) {
-          return [];
-        } else {
-          throw error;
-        }
+        console.log("error", error);
+        throw error;
         // Throw the error to be handled by React Query's error state
       }
     },

@@ -645,7 +645,6 @@ function App() {
             account={account}
             onError={handleError}
             addToast={addToast}
-            chainId={chainId}
           />
         </main>
 
